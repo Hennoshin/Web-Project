@@ -93,6 +93,7 @@ function login(email, password) {
             }
             else {
                 $("#menu").html(response);
+                window.location = "index.php";
             }
         }
     });
@@ -134,16 +135,16 @@ function ajaxRegister() {
 function ajaxCheckout() {
     $("#payment_form").css("display", "block");
     $("#checkout_form").css("display", "none");
-    /*
+    
     $.ajax({
         url: "order-handler.php",
         type: "POST",
         data: { op: "add" },
         success: function(response) {
-            alert(response);
+            console.log(response);
         }
     });
-    */
+    
 }
 
 function ajaxOrderShow() {
@@ -153,7 +154,27 @@ function ajaxOrderShow() {
         data: { op: "show" },
         success: function(response) {
             $("#prinfPaymentUser").html(response);
-            alert(response);
+            console.log(response);
+        }
+    });
+}
+
+function setNewPass() {
+    let pc = $("#passcurrent").val();
+    let np = $("#passnew").val();
+    let npr = $("#passnewrepeat").val();
+
+    $.ajax({
+        url: "passchange.php",
+        type: "POST",
+        data: { pass: pc, newpass: np, cnewpass: npr },
+        success: function(response) {
+            if (response != 1) {
+                $("#notification_change_pass").html(response);
+            }
+            else {
+                $("#notification_change_pass").html("Success");
+            }
         }
     })
 }

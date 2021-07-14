@@ -131,6 +131,7 @@ function showAdd_food() {
     document.getElementById('addfood2').style.display = 'block';
     document.getElementById('updatefood2').style.display = 'none';
     document.getElementById('input_food2').style.display = 'block';
+    $("#picupload").css("display", "block");
     document.getElementById('foodAddNameInput').value = '';
     document.getElementById('foodAddNoteInput').value = '';
     document.getElementById('foodAddPriceInput').value = '';
@@ -213,7 +214,7 @@ function UpdateFood(id) {
             document.getElementById('input_food2').style.display = 'block';
             document.getElementById("addfood2").style.display = 'none';
             document.getElementById("updatefood2").style.display = 'block';
-            document.getElementById("txtId").value = food[i].id;
+            // document.getElementById("txtId").value = food[i].id;
             document.getElementById("foodAddNameInput").value = food[i].name;
             document.getElementById("foodAddNoteInput").value = food[i].note;
             document.getElementById("foodAddPriceInput").value = food[i].price;
@@ -223,7 +224,7 @@ function UpdateFood(id) {
     }
 }
 function SaveUpdateFood() {
-    var idchange = document.getElementById("txtId").value;
+    // var idchange = document.getElementById("txtId").value;
 
     for (var i = 0; i < food.length; i++) {
         if (idchange == food[i].id) {

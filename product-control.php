@@ -6,7 +6,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $GLOBALS["products"] = getProductArray();
-        if ($_SESSION["assupplier"] == true) {
+        if (isset($_SESSION["assupplier"])) {
             require_once "./View/product-view.php";
         }
         else {

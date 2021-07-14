@@ -87,7 +87,7 @@
           <p class="mt-1" style="margin-bottom: 2%;">Enter Your New Password Again</p>
           <input type="password" name="pass" id="passnewrepeat" class="form-control ">
           <p id="notification_change_pass" class="mt-4 text-center mb-0 " style="font-size: 90%;color: red;"></p>
-          <button class="btn btn-warning float-right mt-3" onclick="Changepassword()">Change</button>
+          <button class="btn btn-warning float-right mt-3" onclick="setNewPass()">Change</button>
         </div>
       </div>
     </div>
@@ -253,6 +253,7 @@
             <p class="font-weight-bold" style="font-size: 130%">Payment</p>
             <p class="mb-2 font-weight-bold">Choose Payment Method</p>
             <div class="payment_choose_box" style="width: 60%">
+              <!--
               <div class="float-left pr-1 pb-1" style="width: 50%;height: 80px;">
                 <img onclick="viettinbank()" class="payment_vietinbank " src="image/Vietinbank201808092833.png"
                   width="100%" height="100%" style="border: 1px solid #d7d7d7;">
@@ -264,9 +265,9 @@
               <div class="float-left pr-1 pb-1" style="width: 50%;height: 80px;">
                 <img onclick="nama()" class="payment_nama" src="image/NamABank201808092054.png" width="100%"
                   height="100%" style="border: 1px solid #d7d7d7;">
-              </div>
+              </div> -->
               <div class="float-right pr-1 pb-1" style="width: 50%;height: 80px;">
-                <img onclick="sacom()" class="payment_sacom pl-3 pr-3" src="image/images.png" width="100%" height="100%"
+                <img class="payment_sacom pl-3 pr-3" src="image/images.png" width="100%" height="100%"
                   style="border: 1px solid #d7d7d7;">
               </div>
               <div style="clear: both;"></div>
@@ -283,7 +284,7 @@
             <label for="exampleInputEmail1" class="mt-3">Address</label>
             <input id="address_customer" type="text" class="form-control" id="exampleInputEmail1"
               aria-describedby="emailHelp" placeholder="Masukan alamat">
-            <button onclick="payment()" class="btn btn-primary float-right mt-3">Send</button>
+            <button onclick="ajaxCheckout()" class="btn btn-primary float-right mt-3">Send</button>
           </div>
         </div>
       </div>

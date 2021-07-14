@@ -83,6 +83,15 @@
               <p id="management_order" class="mb-0">Cart</p>
             </div>
           </div>
+
+          <div class="add_produre mt-2" style="width: 85%;margin: auto;border-radius: 10px;display: flex;">
+            <div class="icon_bar" style="width: 16%;padding: 7px;">
+              <img src="">
+            </div>
+            <div class="text_bar p-2 pr-0" style="width: 80%;">
+              <p id="management_order" class="mb-0" onclick="logout()">Logout</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -104,27 +113,6 @@
                 </div>
               </div>
             </div>
-            <div class="row m-0">
-              <div class="col-6 p-3">
-                <div class="payment_food_dash pt-2 pb-0 pl-4 pr-3 shadow-sm" style="height: 300px;background: #fff">
-                  <p style="font-size: 110%" class=" mt-1">Buyer</p>
-                  <div id="scroll_height" data-spy="scroll" data-target="#myScrollspy" data-offset="10"
-                    style="height:220px;overflow-y: scroll;padding-right: 10px;">
-                    <table class="table table-borderless" style="margin-top: -25px;">
-                      <thead>
-                        <tr>
-                          <th scope="col" style="width: 80%;font-size: 115%;"></th>
-                        </tr>
-                      </thead>
-
-                      <!-- untuk bagian pembayaran (list) lanjut ada di js -->
-                      <tbody id="prinfPaymentDash">
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
 
               <!-- bagian produk di dashboard -->
               <div class="col-6 p-3">
@@ -204,17 +192,21 @@
                     <input type="number" class="form-control" id="foodAddPriceInput" placeholder="Price">
                   </div>
                 </div>
-                <div class="col-3 p-0 pt-3 pl-3" style="height: 100px;">
+                <div id="picupload" class="col-3 p-0 pt-3 pl-3" style="height: 100px;">
                   <div class="btn btn-rounded waves-effect btn-sm"
                     style="border-radius: 10px;width: 90%;background: #ff6f47">
                     <span class="text-white">Upload Picture</span>
-                    <input class="text-white" type="file" type="file" name="file" id="foodAddImageInput">
+                    <form method="POST" id="uploadFile" enctype="multipart/form-data">
+                      <input class="text-white" type="file" type="file" name="file" id="foodAddImageInput">
+                      <input type="submit" id="addfood2" class="btn btn-primary float-left"
+                      style="background: #ff6f47;border: 1px solid #ff6f47;" value="Send">
+                    </form>
                   </div>
                 </div>
                 <div class="col-8 p-0  pl-3 pb-4">
-                  <button id="addfood2" onclick="AddFood()" class="btn btn-primary float-left"
-                    style="background: #ff6f47;border: 1px solid #ff6f47;">Kirim</button>
-                  <button id="updatefood2" onclick="SaveUpdateFood()" class="btn btn-warning text-white float-left"
+                  <!-- <button id="addfood2" onclick="addProduct()" class="btn btn-primary float-left"
+                    style="background: #ff6f47;border: 1px solid #ff6f47;">Kirim</button> -->
+                  <button id="updatefood2" onclick="saveUpdate()" class="btn btn-warning text-white float-left"
                     style="display: none;">Update</button>
                   <button onclick="CloseFood()" class="btn btn-danger text-white ml-1">Cancel</button>
                 </div>
