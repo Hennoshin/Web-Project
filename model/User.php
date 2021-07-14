@@ -78,5 +78,14 @@
 
             return true;
         }
+
+        public function setNewPass($pass) {
+            $hash = password_hash($pass, PASSWORD_DEFAULT);
+
+            $query = "UPDATE usertbl SET password = " . "'" . $hash . "'" . " WHERE email = " . "'" . $this->email . "'";
+            mysqli_query($GLOBALS["link"], $query);
+
+            echo mysqli_error($GLOBALS["link"]);
+        }
     }
 ?>
