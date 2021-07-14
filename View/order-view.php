@@ -34,7 +34,7 @@
             <div id="comment_box` + i + `"></div>
         </td>
         <td class="text-center">RM <?php echo htmlspecialchars($order->getTotal()); ?></td>
-        <td class="text-center"><button id="status_prinf`+ paymentFood[i].id_payment + `" onclick="suscess_payment(` + paymentFood[i].id_payment + `)" class="btn btn-warning text-white">` + paymentFood[i].status + `</button></td>
+        <td class="text-center"><button id="status_prinf" class="btn btn-warning text-white">Received</button></td>
     </tr>
     <tr style="width:100%"></tr>
 <?php } ?>

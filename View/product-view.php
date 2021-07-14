@@ -35,8 +35,8 @@
       				</div> </td>
       
       				<td class="text-center"><p class="mt-2" style="padding:5px;">RM <?php echo htmlspecialchars($prod->getPrice()); ?></p> </td>
-      				<td class="text-center">'<div class="btn btn-danger text-white ml-2" onclick="DeleteFood(`+ food[i].id + `)" style="width: 16%;border-radius: 10px;"><i class="fa fa-trash" aria-hidden="true"></i></div>
-  					<div class="btn btn-warning  text-white mr-2" onclick="UpdateFood(`+ food[i].id + `)" style="width: 16%;border-radius: 10px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div> </td>
+      				<td class="text-center"><!-- <div class="btn btn-danger text-white ml-2" onclick="DeleteFood(`+ food[i].id + `)" style="width: 16%;border-radius: 10px;"><i class="fa fa-trash" aria-hidden="true"></i></div> -->
+  					<div class="btn btn-warning  text-white mr-2" onclick="updateProduct('<?php echo htmlspecialchars($id); ?>')" style="width: 16%;border-radius: 10px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div> </td>
 				</tr>
 			<?php }
 		}
