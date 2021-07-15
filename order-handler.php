@@ -13,14 +13,14 @@
         }
         else {
             if ($_POST["op"] == "add") {
-                $id = $_SESSION["user"]->getEmail();
+                $uid = $_SESSION["user"]->getEmail();
                 $items = $_SESSION["cart"]->getItems();
                 $total = 0;
                 foreach ($items as $id => $qty) {
                     $total += Product::getProduct($id)->getPrice() * $qty;
                 }
             
-                $order = new OrderHistory($id, date("Y-m-d"), $items, $total);
+                $order = new OrderHistory($uid, date("Y-m-d"), $items, $total);
                 $order->insertOrder();
                 echo mysqli_error($GLOBALS["link"]);
             }

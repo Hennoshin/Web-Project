@@ -14,32 +14,27 @@ $(document).on('submit', "#uploadFile", function(e) {
         data: img,
         contentType: false,
         processData: false,
-        async: false,
         success: function(response) {
             if (response != 0) {
                 imgurl = response;
                 console.log(response);
+
+                let name = $("#foodAddNameInput").val();
+                let desc = $("#foodAddNoteInput").val();
+                let price = $("#foodAddPriceInput").val();
+
+                $.ajax({
+                    url: "product-update.php",
+                    type: "POST",
+                    data: { op: "add", name: name, desc: desc, price: price, imgurl: imgurl },
+                    success: function(response) {
+                        console.log(response);
+                        console.log(imgurl);
+                    }
+                });
             }
         }
     });
-
-    let name = $("#foodAddNameInput").val();
-    let desc = $("#foodAddNoteInput").val();
-    let price = $("#foodAddPriceInput").val();
-
-    while (imgurl === "empty") {
-        console.log("waiting");
-    }
-
-    $.ajax({
-        url: "product-update.php",
-        type: "POST",
-        data: { op: "add", name: name, desc: desc, price: price, imgurl: imgurl },
-        success: function(response) {
-            console.log(response);
-            console.log(imgurl);
-        }
-    })
 
 });
 

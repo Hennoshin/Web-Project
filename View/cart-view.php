@@ -2,10 +2,12 @@
     $prods = array();
     $items = $cart->getItems();
     $total = 0;
+    $cnt = 0;
     if (!empty($items)) {
         foreach ($items as $id => $qty) {
             $prods[$id] = Product::getProduct($id);
-            $total += $prods[$id]->getPrice() * $qty; ?>
+            $total += $prods[$id]->getPrice() * $qty;
+            $cnt++; ?>
         <tr>
             <td>
                 <div>
@@ -25,4 +27,5 @@
     <?php }
     }
     echo ".sep." . $total;
+    echo ".sep." . $cnt;
 ?>

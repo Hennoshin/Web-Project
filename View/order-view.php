@@ -1,12 +1,12 @@
 <?php
-    if ($_SESSION["assupplier"] != true) {
+    if (!isset($_SESSION["assupplier"])) {
         $usr = $_SESSION["user"];
         $user = $usr->getName();
     }
     $orders = $GLOBALS["order"];
 
     foreach ($orders as $order) {
-        if ($_SESSION["assupplier"] === true) {
+        if (isset($_SESSION["assupplier"])) {
             $user = User::getNameByEmail($order->getUserRef());
         }
 ?>
@@ -14,7 +14,7 @@
         <td>
             <p>Name: <?php echo htmlspecialchars($user); ?></p>
             <p>Address: <?php echo htmlspecialchars($order->getAddress()); ?></p>
-            <!-- <p>Phone Number: `+ paymentFood[i].phone_customer + `</p> -->
+            <p>Order Date: <?php echo htmlspecialchars($order->getDate()); ?></p>
             <p>Payment: COD</p>
        
          </td>

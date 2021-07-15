@@ -33,6 +33,9 @@
         public function getUserRef() {
             return $this->userRef;
         }
+        public function getDate() {
+            return $this->date;
+        }
 
         public static function getOrderArray($uid) {
             $query = "SELECT orderID, orderDate, address FROM order_history WHERE userID = ?";
@@ -146,6 +149,8 @@
 
             $stmt2->bind_param("ssss", $this->orderID, $this->userRef, $this->date, $this->address);
             $stmt2->execute();
+            echo $this->userRef;
+            echo mysqli_error($GLOBALS["link"]);
 
             $stmt->bind_param("ssi", $this->orderID, $iid, $qty);
 
@@ -154,6 +159,7 @@
                 $qty = $q;
                 $stmt->execute();
             }
+            echo mysqli_error($GLOBALS["link"]);
         }
     }
 ?>

@@ -33,6 +33,7 @@ function addToCart(pid) {
                 let resps = response.split(".sep.");
                 $("#prinf_order_cart").html(resps[0]);
                 $("#total_money").html("RM " + resps[1]);
+                $("#order_number").html(resps[2])
                 console.log(response);
             }
             
@@ -53,6 +54,7 @@ function deleteFromCart(pid) {
                 let resps = response.split(".sep.");
                 $("#prinf_order_cart").html(resps[0]);
                 $("#total_money").html("RM " + resps[1]);
+                $("#order_number").html(resps[2])
                 console.log(response);
             }
             
@@ -73,6 +75,7 @@ function editCart(pid, qty) {
                 let resps = response.split(".sep.");
                 $("#prinf_order_cart").html(resps[0]);
                 $("#total_money").html("RM " + resps[1]);
+                $("#order_number").html(resps[2])
                 console.log(response);
             }
         }
