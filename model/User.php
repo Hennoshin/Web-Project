@@ -19,6 +19,9 @@
         public function getEmail() {
             return $this->email;
         }
+        public function getAddress() {
+            return $this->address;
+        }
 
         public static function getUser($email, $pass) {
             $query = "SELECT email, password, name, address FROM usertbl WHERE email = ?";

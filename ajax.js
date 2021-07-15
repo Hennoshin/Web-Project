@@ -138,11 +138,13 @@ function ajaxRegister() {
 function ajaxCheckout() {
     $("#payment_form").css("display", "block");
     $("#checkout_form").css("display", "none");
+
+    let addr = $("#address_customer").val();
     
     $.ajax({
         url: "order-handler.php",
         type: "POST",
-        data: { op: "add" },
+        data: { op: "add", addr: addr },
         success: function(response) {
             console.log(response);
         }

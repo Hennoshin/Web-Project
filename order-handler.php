@@ -20,7 +20,12 @@
                     $total += Product::getProduct($id)->getPrice() * $qty;
                 }
             
-                $order = new OrderHistory($uid, date("Y-m-d"), $items, $total);
+                $useradr = $_POST["addr"];
+                if (empty($useradr)) {
+                    $useradr = $_SESSION["user"]->getAddress();
+                }
+
+                $order = new OrderHistory($uid, date("Y-m-d"), $items, $total, "", $useradr);
                 $order->insertOrder();
                 echo mysqli_error($GLOBALS["link"]);
             }
