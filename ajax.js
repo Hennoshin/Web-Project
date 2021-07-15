@@ -150,6 +150,11 @@ function ajaxCheckout() {
     
 }
 
+function ajaxCheckmenu() {
+    $("#payment_form").css("display", "block");
+    $("#checkout_form").css("display", "none");
+}
+
 function ajaxOrderShow() {
     $.ajax({
         url: "order-handler.php",

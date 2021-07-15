@@ -243,7 +243,7 @@
             <p id="total_money" class="font-weight-bold float-right mt-2" style="font-size: 115%"> </p>
           </div>
           <div style="clear: both;"></div>
-          <div onclick="ajaxCheckout()" class="btn mr-5 text-white float-right" style="background: #fb9200;">Checkout
+          <div onclick="ajaxCheckmenu()" class="btn mr-5 text-white float-right" style="background: #fb9200;">Checkout
           </div>
           <div style="clear: both;"></div>
         </div>
